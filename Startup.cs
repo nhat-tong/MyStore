@@ -4,11 +4,13 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.SpaServices.Webpack;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using MyStore.Data;
 
-namespace aspcore_vue
+namespace MyStore
 {
     public class Startup
     {
@@ -22,6 +24,9 @@ namespace aspcore_vue
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            //services.AddIdentity<IdentityUser, IdentityRole>(cfg => { cfg.User.RequireUniqueEmail = true })
+            //        .AddEntityFrameworkStores<StoreContext>();
+
             services.AddMvc();
         }
 

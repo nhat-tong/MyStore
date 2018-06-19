@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 
-namespace aspcore_vue.Controllers
+namespace MyStore.Controllers
 {
     [Route("api/[controller]")]
     public class SampleDataController : Controller
