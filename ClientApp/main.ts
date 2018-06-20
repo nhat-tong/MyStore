@@ -2,23 +2,16 @@ import './css/site.css';
 import 'bootstrap';
 
 import Vue from 'vue';
-import VueRouter from 'vue-router';
 
-import AppComponent from './components/app/app.vue';
-import HomeComponent from './components/home/home.vue';
-import CounterComponent from './components/counter/counter.vue';
-import FetchDataComponent from './components/fetchdata/fetchdata.vue';
+import AppComponent from './components/app/app.component.vue';
+import Router from './router';
+import Store from './shared/store/index';
+import GlobalFilter from './shared/global.filter';
 
-Vue.use(VueRouter);
-
-const routes = [
-    { path: '/', component: HomeComponent },
-    { path: '/counter', component: CounterComponent },
-    { path: '/fetchdata', component: FetchDataComponent }
-];
+Vue.use(GlobalFilter);
 
 new Vue({
     el: '#app-root',
-    router: new VueRouter({ mode: 'history', routes: routes }),
+    router: Router,
     render: h => h(AppComponent)
 });
